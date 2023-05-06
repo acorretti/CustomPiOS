@@ -100,6 +100,8 @@ function gitclone(){
   then
     clone_params="$clone_params --depth $depth"
   fi
+
+  clone_params="--config http.postBuffer=524288000 $clone_params"
   
   repo_dir=$2
   if [ ! -n "$repo_dir" ]
